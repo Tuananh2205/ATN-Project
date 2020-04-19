@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\css\style.css">
+    <title>ATN Index</title>
+</head>
+<body id="index">
+    <a id="a1" href="/signup"><img style="width:150px;" src="\images\images.jpg" alt=""></a>
+    <center>
+        <h1>Website for ATN </h1>
+        <h2 id="login_title">LOGIN</h2>
+	<form class="frm_login" action="login" method="POST">   <!--form action có thể để "" hoặc "index.php"  -->
+		<b>Username:</b> <input type="text" name="username" placeholder="Username" required=""> <br> <br>
+		<b>Password:</b> <input type="password" name="password" placeholder="Password" required=""> <br> <br> <br>
+		<input onclick="login()" width="130px;" id="form_login" type="image" src="images\login-button-png-4.jpg" name="Login" value="Login">
+	</form>
+    <script type="text/javascript">
+		function login() {
+			alert("Login successful!");
+		}
+	</script>
+    </center>
+</body>
+</html>

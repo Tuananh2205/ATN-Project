@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Product</title>
+</head>
+<body>
+    <form action="delete" method="POST">
+        <input type="hidden" name="id" value="{{product._id}}">
+        Name: <input type="text" name="Pname" value="{{product.Name}}">
+        <br>
+        Color: <input type="text" name="Pcolor" value="{{product.Color}}">
+        <br>
+        Price: <input type="text" name="Pprice" value="{{product.Price}}">
+        <br>
+        Status: <input type="text" name="Pstatus" value="{{product.Status}}">
+        <br>
+        Image:
+        <img src='../product/photo/{{product._id}}' alt="" width="250px" height="200px">
+        <!--<input style="margin-top: -8px;" type="file" name="picture" accept="image/*" required>-->
+        
+        <br>
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>

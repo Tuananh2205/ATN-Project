@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register page</title>
+</head>
+
+<body>
+	<h1>Register your account</h1>
+	<form action="signup" method="POST">
+		<!--form action có thể để "" hoặc "index.php"  -->
+		<b>Username:</b> <input type="text" name="username" placeholder="Username" required=""> <br> <br>
+		<b>Password:</b> <input type="password" name="password" placeholder="Password" required=""> <br> <br> <br>
+		<input onclick="signup()" width="130px;" type="image" src="\images\images.jpg" name="Signup" value="Signup">
+	</form>
+	<script type="text/javascript">
+		function signup() {
+			alert("Signup successful!");
+		}
+	</script>
+
+</body>
+
+</html>

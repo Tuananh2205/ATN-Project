@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="\css\style.css">
+</head>
+<body >
+    <div id="menu_bar">
+        <ul id="menu">
+            <li><a href="/homepage"> Home</a></li>
+            <li>
+                <a href="/product">Product</a>
+            </li>
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/account">User management</a></li>
+            <li style="float:right"><a class="active" href="/">Logout</a></li>
+        </ul>
+    </div>
+    <h1> Product Management</h1>
+    <form action="" method="POST">
+        Product name:
+        <input type="text" name="Pname" id="">
+        <input type="submit" value="Search">
+    </form>
+    <center>
+        <b>Total of accounts: {{count}}</b>
+    </center>
+    <br>
+    <a style="margin-left: 46%;" href="/product/add">Add new product</a>
+    <br><br>
+    <table width="50%" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Image</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {{# each product}}
+        <tr>
+            <td>{{_id}}</td>
+            <td>{{Name}} </td>
+            <td>{{Color}}</td>
+            <td>{{Price}}</td>
+            <td>{{Status}}</td>
+            <td><img src='../product/photo/{{_id}}' alt="" width="250px" height="200px"></td>
+            <td><a href="/product/update?id={{_id}}">Update</a></td>
+            <td><a href="/product/delete?id={{_id}}">Delete</a></td>
+        </tr>
+        {{/each}}
+    </table>
+      
+         
+</body>
+</html>

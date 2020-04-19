@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\css\style.css">
+    <title>Account management</title>
+</head>
+
+<body>
+    <div id="menu_bar">
+        <ul id="menu">
+            <li><a href="/homepage"> Home</a></li>
+            <li>
+                <a href="/product">Product</a>
+            </li>
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/account">User management</a></li>
+            <li style="float:right"><a class="active" href="/">Logout</a></li>
+        </ul>
+    </div>
+    <h1><b>ACCOUNT MANAGEMENT</b></h1>
+    <form action="" method="POST">
+        User name:
+        <input type="text" name="username" id="">
+        <input type="submit" value="Search">
+    </form>
+    <center>
+        <b>Total of accounts: {{count}}</b>
+    </center>
+    <br>
+    <a style="margin-left: 46%;" href="/signup">Add new account</a>
+    <br><br>
+    <table width="50%" border="1">
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {{# each account}}
+        <tr>
+            <td>{{Username}} </td>
+            <td>{{Password}}</td>
+            <td><a href="/account/update?id={{_id}} ">Update</a></td>
+            <td><a href="/account/delete?id={{_id}} ">Delete</a></td>
+
+        </tr>
+        {{/each}}
+    </table>
+</body>
+
+</html>
