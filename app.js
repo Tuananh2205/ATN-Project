@@ -25,4 +25,5 @@ app.use('/product', productController);
 app.use('/employee',employeeController);
 app.use('/homepage',homeController);
 app.use('/account', accountController);
-var server=app.listen(3000,function() {});
+
+app.listen(process.env.PORT || 3000);
