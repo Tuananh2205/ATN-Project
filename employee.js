@@ -26,11 +26,12 @@ router.post('/add',async (req,res)=>{
     let name = req.body.Ename;
     let age = req.body.Eage;
     let gender = req.body.Egender;
-    let newEm = {Employee_Name : name, Employee_Age: age,Employee_Gender : gender};
+    let phone = req.body.Ephone;
+    let newEm = {Employee_Name : name, Employee_Age: age,Employee_Gender : gender, Employee_Phone:phone};
     await dbo.collection("Employee").insertOne(newEm);
     console.log("Insert successful!");
-    let results = await dbo.collection("Employee").find({}).toArray();
-    res.render('allEmployee',{employee:results});
+    
+    res.redirect('/employee');
 
 })
 
@@ -61,7 +62,8 @@ router.post('/update',async(req,res)=>{
     let newname = req.body.name;
     let newage = req.body.age;
     let newgender = req.body.gender;
-    let newValues ={$set : {Employee_Name: newname, Employee_Age: newage, Employee_Gender : newgender}};
+    let newphone = req.body.phone;
+    let newValues ={$set : {Employee_Name: newname, Employee_Age: newage, Employee_Gender : newgender, Employee_Phone : newphone}};
     var ObjectID = require('mongodb').ObjectID;
     let condition = {"_id" : ObjectID(id)};
     
@@ -69,8 +71,7 @@ router.post('/update',async(req,res)=>{
     let dbo = client.db("ATNStorage");
     await dbo.collection("Employee").updateOne(condition,newValues);
  
-    let results = await dbo.collection("Employee").find({}).toArray();
-    res.render('allEmployee',{employee:results});
+    res.redirect('/employee');
 })
 
 //get employee trong database to Delete view
@@ -89,12 +90,12 @@ router.post('/delete', async(req,res)=>{
     let name = req.body.name;
     let age = req.body.age;
     let gender = req.body.gender;
-    let delEm = {Employee_Name: name, Employee_Age: age, Employee_Gender : gender};
+    let phone = req.body.phone;
+    let delEm = {Employee_Name: name, Employee_Age: age, Employee_Gender : gender, Employee_Phone : phone};
     let client= await MongoClient.connect(url);
     let dbo = client.db("ATNStorage");
     await dbo.collection("Employee").deleteOne(delEm);
-    console.log("Delete successful!");
-    let results = await dbo.collection("Employee").find({}).toArray();
-    res.render('allEmployee',{employee:results});
+    console.log("Delete 1 employee successful!");
+    res.redirect('/employee');
 })
 module.exports = router;

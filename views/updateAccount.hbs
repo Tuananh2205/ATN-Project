@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Update Account</title>
 </head>
 <body>
+    <div id="menu_bar">
+        <ul id="menu">
+            <li><a href="/homepage"> Home</a></li>
+            <li>
+                <a href="/product">Product</a>
+            </li>
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/account">User management</a></li>
+            <li style="float:right"><a class="active" href="/">Logout</a></li>
+        </ul>
+    </div>
+    <h1>Update account</h1>
     <form action="update" method="POST">
         <input type="hidden" name="id" value="{{account._id}}">
         Username: <input type="text " name="username" value="{{account.Username}}">
         <br>
-        Password: <input type="text " name="password" value="{{account.Password}}">
+        Password: <input type="password" name="password" value="{{account.Password}}">
         <br>
         <button type="submit" value="Update">Update</button>
     </form>

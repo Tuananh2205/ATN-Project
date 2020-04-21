@@ -4,17 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Delete Employee</title>
 </head>
 
 <body>
+    <div id="menu_bar">
+        <ul id="menu">
+            <li><a href="/homepage"> Home</a></li>
+            <li>
+                <a href="/product">Product</a>
+            </li>
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/account">User management</a></li>
+            <li style="float:right"><a class="active" href="/">Logout</a></li>
+        </ul>
+    </div>
+    <h1>Delete employee</h1>
     <form action="delete" method="POST">
         <input type="hidden" name="id" value="{{employee._id}}">
         Name: <input type="text " name="name" value="{{employee.Employee_Name}}">
         <br>
-        Age: <input type="text " name="age" value="{{employee.Employee_Age}}">
+        Age: <input type="number" name="age" value="{{employee.Employee_Age}}">
         <br>
         Gender: <input type="text " name="gender" value="{{employee.Employee_Gender}}">
+        <br>
+        Phone: <input type="number" name="phone" value="{{employee.Employee_Phone}}">
         <br>
         <input type="submit" value="Delete">
 

@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Update Product</title>
 </head>
 <body>
+    <div id="menu_bar">
+        <ul id="menu">
+            <li><a href="/homepage"> Home</a></li>
+            <li>
+                <a href="/product">Product</a>
+            </li>
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/account">User management</a></li>
+            <li style="float:right"><a class="active" href="/">Logout</a></li>
+        </ul>
+    </div>
+    <h1>Update Product</h1>
     <form action="update" enctype="multipart/form-data"  method="POST">
         <input type="hidden" name="id" value="{{product._id}}">
         Name: <input type="text " name="Pname" value="{{product.Name}}">
         <br>
         Color: <input type="text " name="Pcolor" value="{{product.Color}}">
         <br>
-        Price: <input type="text " name="Pprice" value="{{product.Price}}">
+        Price: <input type="number" name="Pprice" value="{{product.Price}}">
         <br>
         Status: <input type="text " name="Pstatus" value="{{product.Status}}">
         <br><br>

@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Add item</title>
 </head>
 <body>
+    <div id="menu_bar">
+        <ul id="menu">
+            <li><a href="/homepage"> Home</a></li>
+            <li>
+                <a href="/product">Product</a>
+            </li>
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/account">User management</a></li>
+            <li style="float:right"><a class="active" href="/">Logout</a></li>
+        </ul>
+    </div>
+    <h1>Add new item</h1>
     <div>
     <form action="add" enctype="multipart/form-data" method="POST">
         Product name:
@@ -15,7 +28,7 @@
         <input type="text" name="Pcolor" id="">
         <br>
         Price:
-        <input type="text" name="Pprice" id="">
+        <input type="number" name="Pprice" id="">
         Status:
         <input type="text" name="Pstatus" id="">
         <br>

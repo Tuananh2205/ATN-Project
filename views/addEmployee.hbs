@@ -3,20 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Add Employee</title>
 </head>
 <body>
+    <div id="menu_bar">
+        <ul id="menu">
+            <li><a href="/homepage"> Home</a></li>
+            <li>
+                <a href="/product">Product</a>
+            </li>
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/account">User management</a></li>
+            <li style="float:right"><a class="active" href="/">Logout</a></li>
+        </ul>
+    </div>
+    <h1>Add new employee</h1>
     <form action="add" method="POST">
         Employee name:
         <input type="text" name="Ename" id="">
         <br>
         Age:
-        <input type="text" name="Eage" id="">
+        <input type="number" name="Eage" id="">
         <br>
         Gender:
         <input type="text" name="Egender" id="">
         <br>
-        <input type="submit" value="Insert">
-    </form>
+        Phone:
+        <input type="number" name="Ephone" id="">
+        <br>
+        <input type="submit" value="Add">
+    </form>r>
 </body>
 </html>
