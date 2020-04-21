@@ -57,8 +57,7 @@ router.post('/add', upload.single('picture'), async(req,res)=>
     let dbo = client.db("ATNStorage");
     dbo.collection("Product").insertOne(newProduct);
 
-    let results = await dbo.collection("Product").find({}).toArray();
-    res.render('allProduct',{product:results});
+    res.redirect('/product');
 })
 
 
